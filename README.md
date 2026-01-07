@@ -1,4 +1,4 @@
-# 🏓 Pong Game (Pygame)
+# Pong Game (Pygame)
 
 A simple 2D Pong game built using **Python** and **Pygame**.  
 This project is developed step by step to learn the core concepts of game development such as the game loop, object movement, and collision handling.
@@ -8,7 +8,7 @@ Player–ball collision logic will be implemented next.
 
 ---
 
-## 🎮 Current Features
+## Current Features
 
 - Two player paddles
   - Player 1 on the **left side** of the screen
@@ -23,7 +23,7 @@ Player–ball collision logic will be implemented next.
 
 ---
 
-## 🚧 Features In Progress
+## Features In Progress
 
 - Collision detection between ball and players
 - Scoring system
@@ -32,49 +32,53 @@ Player–ball collision logic will be implemented next.
 
 ---
 
-🎯 Learning Objectives
-This project is created to practice:
-Game loop implementation
-Object-Oriented Programming (OOP)
-Handling movement and screen boundaries
-Understanding collision detection (upcoming feature)
+## Learning Objectives
 
-📌 Future Improvements
-Player–ball collision handling
-Score display using fonts
-AI-controlled opponent
-Difficulty levels
-Pause and restart menu
+- This project is created to practice:
+- Game loop implementation
+- Object-Oriented Programming (OOP)
+- Handling movement and screen boundaries
+- Understanding collision detection (upcoming feature)
 
 ---
 
-## 🛠 Technologies Used
+## Future Improvements
+- Player–ball collision handling
+- Score display using fonts
+- AI-controlled opponent
+- Difficulty levels
+- Pause and restart menu
+
+---
+
+## Technologies Used
 
 - Python 3
 - Pygame
 
 ---
 
-## 📁 Project Structure
+## Project Structure
 
-Pong/
-│
-├── pong.py # Main game file and game loop
-├── player.py # Player (paddle) logic
-├── ball.py # Ball movement and rebound logic
-├── settings.py # Game settings like ball speed, colors etc.
-├── README.md
+- Pong/
+- │
+- ├── pong.py # Main game file and game loop
+- ├── player.py # Player (paddle) logic
+- ├── ball.py # Ball movement and rebound logic
+- ├── settings.py # Game settings like ball speed, colors etc.
+- ├── README.md
 
 
 ---
 
-## ▶ How to Run the Game
+## How to Run the Game
 
 1. Install Python (if not already installed)
 2. Install Pygame:
    ```bash
    pip install pygame
-
-python pong.py
+3. Open terminal and run
+  ```bash
+  python pong.py
 
 
