@@ -5,9 +5,9 @@ class Settings:
         self.player_text_size = 48
         self.player_text_color = (200,200,200)
         self.player_bg_color = (50,50,50)
-        self.player_speed = 3
+        self.player_speed = 20
 
-        self.ball_speed = 1
+        self.ball_speed = 10
         self.ball_radius = 10
         self.ball_color = (255,0,0)
         self.ball_direction_y = -1

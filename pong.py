@@ -21,6 +21,7 @@ class Pong:
         self.player1 = Player(self,'Player 1','left')
         self.player2 = Player(self,'Player 2','right')
         self.ball = Ball(self)
+        self.clock = pygame.time.Clock()
 
     def check_events(self):
         """check for game events"""
@@ -66,6 +67,7 @@ class Pong:
     def run(self):
         """Keep the game running"""
         while True:
+            self.clock.tick(60)
             self.update_screen()
             self.player1.move_player()
             self.player2.move_player()
