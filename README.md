@@ -20,6 +20,7 @@ Player–ball collision logic will be implemented next.
   - Left edge
   - Right edge
 - Smooth game loop using Pygame
+- Game runs at 60 FPS
 
 ---
 
