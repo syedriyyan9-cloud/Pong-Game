@@ -1,3 +1,5 @@
+import random
+
 import pygame
 
 import sys
@@ -7,6 +9,8 @@ from player import Player
 from settings import Settings
 
 from ball import Ball
+
+import random
 
 class Pong:
     """a class to represent pong game"""
@@ -58,6 +62,7 @@ class Pong:
     def update_screen(self):
         """update the screen"""
         self.check_events()
+        # self.screen.fill(random.choice(self.setting.list_of_colors)) #comment in to make the bg color keep on changing
         self.screen.fill(self.setting.color_white)
         self.player1.draw()
         self.player2.draw()
@@ -72,6 +77,7 @@ class Pong:
             self.player1.move_player()
             self.player2.move_player()
             self.ball.update_position()
+            pygame.mouse.set_visible(False)
 
 if __name__ == '__main__':
     pong = Pong()

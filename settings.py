@@ -18,3 +18,4 @@ class Settings:
         self.color_red = (255,0,0)
         self.color_green = (0,255,0)
         self.color_blue = (0,0,255)
+        self.list_of_colors = [self.color_white, self.color_black, self.color_red, self.color_green, self.color_blue]

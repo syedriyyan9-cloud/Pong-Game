@@ -1,5 +1,7 @@
 import pygame
 
+import random
+
 class Ball:
     """a class to represent a ball"""
 
@@ -16,7 +18,9 @@ class Ball:
 
     def draw(self):
         """draw the ball onto the screen"""
-        pygame.draw.circle(self.screen,self.setting.ball_color,self.pos,self.setting.ball_radius)
+        # comment the next line of code in to make the color of ball change with every iteration
+        # pygame.draw.circle(self.screen,random.choice(self.setting.list_of_colors),self.pos,self.setting.ball_radius)
+        pygame.draw.circle(self.screen,self.setting.color_red,self.pos,self.setting.ball_radius)
 
     def update_position(self):
         """update the position of the ball"""

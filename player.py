@@ -36,6 +36,7 @@ class Player:
             self.rect.left = self.screen_rect.left
             self.image_rect.left = self.rect.left
             self.image = pygame.transform.rotate(self.image, 270)
+
         if pos.lower() == 'right':
             self.rect.right = self.screen_rect.right + 100
             self.image_rect.right = self.rect.right
