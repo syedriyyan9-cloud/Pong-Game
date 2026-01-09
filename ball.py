@@ -48,8 +48,8 @@ class Ball:
         if self.rect.left > self.screen_rect.left or self.rect.right < self.screen_rect.right:
             self.x += self.setting.ball_speed * self.setting.ball_direction_x
             # remove this logic when setting up score boards
-            if self.x < self.screen_rect.left:
-                self.setting.ball_direction_x *= -1
-            elif self.x > self.screen_rect.right:
-                self.setting.ball_direction_x *= -1
+            # if self.x < self.screen_rect.left:
+            #     self.setting.ball_direction_x *= -1
+            # elif self.x > self.screen_rect.right:
+            #     self.setting.ball_direction_x *= -1
         self.rect.x = self.x

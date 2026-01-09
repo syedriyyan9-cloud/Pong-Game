@@ -12,6 +12,8 @@ from ball import Ball
 
 import random
 
+from score_boards import ScoreBoard
+
 class Pong:
     """a class to represent pong game"""
 
@@ -27,6 +29,8 @@ class Pong:
         self.player2 = Player(self,'Player 2','right')
         self.ball = Ball(self)
         self.clock = pygame.time.Clock()
+        self.p1_score_board = ScoreBoard(self,"P1 Score","left")
+        self.p2_score_board = ScoreBoard(self,"P2 Score","right")
 
     def check_events(self):
         """check for game events"""
@@ -68,6 +72,8 @@ class Pong:
         self.player1.draw()
         self.player2.draw()
         self.ball.draw()
+        self.p1_score_board.draw()
+        self.p2_score_board.draw()
         pygame.display.flip()
 
     def detect_collision(self):
@@ -80,10 +86,17 @@ class Pong:
         """Change the direction of the ball"""
         if collision_player_1 or collision_player_2:
             self.setting.ball_direction_x *= -1
-        # if self.ball.rect.x > self.screen_rect.right:
-        #     print("player 2 score = -1")
-        # if self.ball.rect.x < self.screen_rect.left:
-        #     print("player 1 score = -1")
+
+    def update_score(self):
+        """update the score"""
+        if self.ball.rect.right > self.screen_rect.right:
+            self.setting.player1_score += 1
+            self.setting.player_score += self.setting.player1_score
+            self.p1_score_board.update_score()
+        if self.ball.rect.left < self.screen_rect.left:
+            self.setting.player2_score += 1
+            self.setting.player_score += self.setting.player2_score
+            self.p2_score_board.update_score()
 
     def run(self):
         """Keep the game running"""
@@ -94,6 +107,7 @@ class Pong:
             self.player2.move_player()
             self.ball.update_position()
             self.detect_collision()
+            self.update_score()
             pygame.mouse.set_visible(False)
 
 if __name__ == '__main__':

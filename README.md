@@ -22,12 +22,12 @@ Player–ball collision logic will be implemented next.
 - Smooth game loop using Pygame
 - Game runs at 60 FPS
 - Collision detection between ball and players
+- Scoring system (half implemented)
 
 ---
 
 ## Features In Progress
 
-- Scoring system
 - Game reset and restart logic
 - Sound effects
 
