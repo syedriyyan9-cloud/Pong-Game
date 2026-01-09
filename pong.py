@@ -17,6 +17,7 @@ class Pong:
 
     def __init__(self):
         """initialize game attributes"""
+        pygame.init()
         self.screen = pygame.display.set_mode((0,0),pygame.FULLSCREEN)
         self.screen_rect = self.screen.get_rect()
         self.screen_width = self.screen_rect.width
@@ -69,6 +70,21 @@ class Pong:
         self.ball.draw()
         pygame.display.flip()
 
+    def detect_collision(self):
+        """Detect collisions with the ball"""
+        collision_player_1 = pygame.sprite.collide_rect(self.ball,self.player1)
+        collision_player_2 = pygame.sprite.collide_rect(self.ball,self.player2)
+        self.direction_change_on_collision(collision_player_2,collision_player_1)
+
+    def direction_change_on_collision(self,collision_player_1,collision_player_2):
+        """Change the direction of the ball"""
+        if collision_player_1 or collision_player_2:
+            self.setting.ball_direction_x *= -1
+        # if self.ball.rect.x > self.screen_rect.right:
+        #     print("player 2 score = -1")
+        # if self.ball.rect.x < self.screen_rect.left:
+        #     print("player 1 score = -1")
+
     def run(self):
         """Keep the game running"""
         while True:
@@ -77,6 +93,7 @@ class Pong:
             self.player1.move_player()
             self.player2.move_player()
             self.ball.update_position()
+            self.detect_collision()
             pygame.mouse.set_visible(False)
 
 if __name__ == '__main__':

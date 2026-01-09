@@ -21,12 +21,12 @@ Player–ball collision logic will be implemented next.
   - Right edge
 - Smooth game loop using Pygame
 - Game runs at 60 FPS
+- Collision detection between ball and players
 
 ---
 
 ## Features In Progress
 
-- Collision detection between ball and players
 - Scoring system
 - Game reset and restart logic
 - Sound effects
@@ -44,9 +44,7 @@ Player–ball collision logic will be implemented next.
 ---
 
 ## Future Improvements
-- Player–ball collision handling
 - Score display using fonts
-- AI-controlled opponent
 - Difficulty levels
 - Pause and restart menu
 
@@ -54,7 +52,7 @@ Player–ball collision logic will be implemented next.
 
 ## Technologies Used
 
-- Python 3
+- Python 3.13
 - Pygame
 
 ---
@@ -80,6 +78,6 @@ Player–ball collision logic will be implemented next.
    pip install pygame
 3. Open terminal and run
   ```bash
-  python pong.py
+   python pong.py
 
 
