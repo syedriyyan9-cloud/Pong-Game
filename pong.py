@@ -10,9 +10,9 @@ from settings import Settings
 
 from ball import Ball
 
-import random
-
 from score_boards import ScoreBoard
+
+from pygame import mixer
 
 class Pong:
     """a class to represent pong game"""
@@ -28,9 +28,13 @@ class Pong:
         self.player1 = Player(self,'Player 1','left')
         self.player2 = Player(self,'Player 2','right')
         self.ball = Ball(self)
+        self.ball_radius = 0
         self.clock = pygame.time.Clock()
         self.p1_score_board = ScoreBoard(self,"P1 Score","left")
         self.p2_score_board = ScoreBoard(self,"P2 Score","right")
+        mixer.music.load('Sound\\music.wav')
+        mixer.music.set_volume(0.5)
+        mixer.music.play(-1)
 
     def check_events(self):
         """check for game events"""
@@ -85,18 +89,25 @@ class Pong:
     def direction_change_on_collision(self,collision_player_1,collision_player_2):
         """Change the direction of the ball"""
         if collision_player_1 or collision_player_2:
+            collision_sound = pygame.mixer.Sound('Sound\\collision_sound.wav')
+            collision_sound.play()
             self.setting.ball_direction_x *= -1
+            self.setting.ball_color = random.choice(self.setting.list_of_colors_ball)
+            # self.setting.player_bg_color = random.choice(self.setting.list_of_colors_player)
 
-    def update_score(self):
-        """update the score"""
+    def update_and_reset(self):
+        """update the score and reset"""
         if self.ball.rect.right > self.screen_rect.right:
-            self.setting.player1_score += 1
-            self.setting.player_score += self.setting.player1_score
+            self.reset_ball()
             self.p1_score_board.update_score()
         if self.ball.rect.left < self.screen_rect.left:
-            self.setting.player2_score += 1
-            self.setting.player_score += self.setting.player2_score
+            self.reset_ball()
             self.p2_score_board.update_score()
+
+    def reset_ball(self):
+        """reset the game"""
+        self.ball.y = self.screen_rect.centery
+        self.ball.x = self.screen_rect.centerx
 
     def run(self):
         """Keep the game running"""
@@ -107,7 +118,7 @@ class Pong:
             self.player2.move_player()
             self.ball.update_position()
             self.detect_collision()
-            self.update_score()
+            self.update_and_reset()
             pygame.mouse.set_visible(False)
 
 if __name__ == '__main__':

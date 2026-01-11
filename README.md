@@ -17,19 +17,18 @@ Player–ball collision logic will be implemented next.
 - Ball rebounds when it hits:
   - Top edge
   - Bottom edge
-  - Left edge
-  - Right edge
 - Smooth game loop using Pygame
 - Game runs at 60 FPS
 - Collision detection between ball and players
 - Scoring system (half implemented)
+- Game reset
+- Sound effects
 
 ---
 
 ## Features In Progress
 
-- Game reset and restart logic
-- Sound effects
+- Restart logic
 
 ---
 

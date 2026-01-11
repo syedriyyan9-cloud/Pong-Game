@@ -20,6 +20,7 @@ class Player:
         self.rect = self.image.get_rect()
         self.player_width = self.rect.width
         self.player_height = self.rect.height
+        self.rect.centery = self.screen_rect.centery
         self.y = float(self.rect.y)
         self.set_position(pos)
 

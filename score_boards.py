@@ -12,7 +12,7 @@ class ScoreBoard:
         self.setting = game.setting
         self.font = pygame.font.SysFont(None,self.setting.font_size)
         self.msg = msg
-        self.ball = game.ball
+        self.score = 0
         self.render_image(msg,pos)
 
     def render_image(self,msg,pos):
@@ -41,5 +41,6 @@ class ScoreBoard:
 
     def update_score(self):
         """update scores of players"""
-        self.image = self.font.render(f"{self.msg}: {self.setting.player_score}", True,
+        self.score += 1
+        self.image = self.font.render(f"{self.msg}: {self.score}", True,
                                               self.setting.font_color, self.setting.font_size)

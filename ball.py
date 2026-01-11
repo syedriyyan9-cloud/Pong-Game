@@ -37,9 +37,7 @@ class Ball:
         """Check y-axis direction for the ball"""
         if self.rect.top > 0 or self.rect.bottom < self.screen_rect.bottom:
             self.y -= self.setting.ball_speed * -self.setting.ball_direction_y
-            if self.y < 0:
-                self.setting.ball_direction_y *= -1
-            elif self.y > self.screen_rect.bottom:
+            if self.y < 0 or self.y > self.screen_rect.bottom:
                 self.setting.ball_direction_y *= -1
         self.rect.y = self.y
 
