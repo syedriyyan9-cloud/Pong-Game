@@ -11,13 +11,14 @@ class Settings:
         self.player_bg_color = (200,200,200)
 
         self.font_size = 48
-        self.font_color = (255,0,0)
+        self.font_color = (255,255,255)
 
         self.ball_speed = 10
         self.ball_radius = 10
         self.ball_color = (255,0,0)
         self.ball_direction_y = random.choice([1,-1])
         self.ball_direction_x = random.choice([1,-1])
+        self.increase_speed = 0.05
 
         self.color_white = (255,255,255)
         self.color_black = (0,0,0)

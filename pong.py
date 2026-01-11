@@ -92,7 +92,7 @@ class Pong:
             collision_sound = pygame.mixer.Sound('Sound\\collision_sound.wav')
             collision_sound.set_volume(1.0)
             collision_sound.play()
-            self.setting.ball_speed += 0.1
+            self.setting.ball_speed += self.setting.increase_speed
             self.setting.ball_direction_x *= -1
             self.setting.ball_color = random.choice(self.setting.list_of_colors_ball)
             # self.setting.player_bg_color = random.choice(self.setting.list_of_colors_player)
@@ -108,7 +108,7 @@ class Pong:
             self.p2_score_board.update_score()
 
     def reset_ball(self):
-        """reset the game"""
+        """reset the ball"""
         self.ball.y = self.screen_rect.centery
         self.ball.x = self.screen_rect.centerx
 

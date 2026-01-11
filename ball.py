@@ -12,26 +12,21 @@ class Ball:
         self.screen_width = game.screen_width
         self.screen_height = game.screen_height
         self.setting = game.setting
-        # self.x_axis = game.screen_width//2
-        # self.y_axis = game.screen_height//2
-        # self.pos = (self.x_axis,self.y_axis)
         self.rect = pygame.Rect(0,0,self.setting.ball_radius,self.setting.ball_radius)
+        self.circle = self.rect.width
         self.rect.center = self.screen_rect.center
         self.x = float(self.rect.x)
         self.y = float(self.rect.y)
 
     def draw(self):
         """draw the ball onto the screen"""
-        # pygame.draw.circle(self.screen,self.setting.color_red,self.pos,self.setting.ball_radius)
-        # comment the next line of code in to make the color of ball change with every iteration
-        # pygame.draw.rect(self.screen,random.choice(self.setting.list_of_colors),self.rect)
-        pygame.draw.rect(self.screen,self.setting.ball_color,self.rect)
+        pygame.draw.circle(self.screen,self.setting.ball_color,
+                           self.rect.center,self.setting.ball_radius)
 
     def update_position(self):
         """update the position of the ball"""
         self._check_y_direction()
         self._check_x_direction()
-        # self.pos = (self.x_axis,self.y_axis)
 
     def _check_y_direction(self):
         """Check y-axis direction for the ball"""
