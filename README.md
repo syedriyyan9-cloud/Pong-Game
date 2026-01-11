@@ -23,6 +23,7 @@ Player–ball collision logic will be implemented next.
 - Scoring system (half implemented)
 - Game reset
 - Sound effects
+- Color changing of Screen and ball upon collision.
 
 ---
 
@@ -38,7 +39,7 @@ Player–ball collision logic will be implemented next.
 - Game loop implementation
 - Object-Oriented Programming (OOP)
 - Handling movement and screen boundaries
-- Understanding collision detection (upcoming feature)
+- Understanding collision detection 
 
 ---
 
@@ -64,6 +65,7 @@ Player–ball collision logic will be implemented next.
 - ├── player.py # Player (paddle) logic
 - ├── ball.py # Ball movement and rebound logic
 - ├── settings.py # Game settings like ball speed, colors etc.
+- ├── score_boards.py # Keeps track of player score
 - ├── README.md
 
 
