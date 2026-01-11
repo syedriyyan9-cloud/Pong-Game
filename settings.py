@@ -2,6 +2,7 @@ import random
 
 class Settings:
     """a class to hold game settings"""
+
     def __init__(self):
         """settings for the game"""
         self.player_text_size = 48
@@ -23,6 +24,10 @@ class Settings:
         self.color_red = (255,0,0)
         self.color_green = (0,255,0)
         self.color_blue = (0,0,255)
+        self.color_cyan = (0,255,255)
+        self.color_magenta = (255,0,255)
+        self.color_yellow = (255,255,0)
         self.list_of_colors_ball = [self.color_black, self.color_red, self.color_green, self.color_blue]
-        self.list_of_colors_player = [self.color_red, self.color_green, self.color_blue]
+        self.list_of_colors_player = [self.color_white, self.color_cyan, self.color_magenta, self.color_yellow]
+        self.screen_color = (255,255,255)
 

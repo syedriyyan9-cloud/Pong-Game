@@ -72,7 +72,7 @@ class Pong:
         """update the screen"""
         self.check_events()
         # self.screen.fill(random.choice(self.setting.list_of_colors)) #comment in to make the bg color keep on changing
-        self.screen.fill(self.setting.color_white)
+        self.screen.fill(self.setting.screen_color)
         self.player1.draw()
         self.player2.draw()
         self.ball.draw()
@@ -90,10 +90,13 @@ class Pong:
         """Change the direction of the ball"""
         if collision_player_1 or collision_player_2:
             collision_sound = pygame.mixer.Sound('Sound\\collision_sound.wav')
+            collision_sound.set_volume(1.0)
             collision_sound.play()
+            self.setting.ball_speed += 0.1
             self.setting.ball_direction_x *= -1
             self.setting.ball_color = random.choice(self.setting.list_of_colors_ball)
             # self.setting.player_bg_color = random.choice(self.setting.list_of_colors_player)
+            self.setting.screen_color = random.choice(self.setting.list_of_colors_player)
 
     def update_and_reset(self):
         """update the score and reset"""
