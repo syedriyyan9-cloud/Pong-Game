@@ -4,6 +4,8 @@ import pygame
 
 import sys
 
+from pygame import mixer
+
 from player import Player
 
 from settings import Settings
@@ -11,8 +13,6 @@ from settings import Settings
 from ball import Ball
 
 from score_boards import ScoreBoard
-
-from pygame import mixer
 
 class Pong:
     """a class to represent pong game"""
