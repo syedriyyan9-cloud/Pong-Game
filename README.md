@@ -21,7 +21,7 @@ Player–ball collision logic will be implemented next.
 - Game runs at 60 FPS
 - Collision detection between ball and players
 - Scoring system (half implemented)
-- Game reset
+- Randomized Ball Movement
 - Sound effects
 - Color changing of Screen and ball upon collision.
 
@@ -44,7 +44,6 @@ Player–ball collision logic will be implemented next.
 ---
 
 ## Future Improvements
-- Score display using fonts
 - Difficulty levels
 - Pause and restart menu
 

@@ -89,28 +89,39 @@ class Pong:
     def direction_change_on_collision(self,collision_player_1,collision_player_2):
         """Change the direction of the ball"""
         if collision_player_1 or collision_player_2:
-            collision_sound = pygame.mixer.Sound('Sound\\collision_sound.wav')
-            collision_sound.set_volume(1.0)
-            collision_sound.play()
+            self.ball_rebound_sound()
             self.setting.ball_speed += self.setting.increase_speed
             self.setting.ball_direction_x *= -1
             self.setting.ball_color = random.choice(self.setting.list_of_colors_ball)
             # self.setting.player_bg_color = random.choice(self.setting.list_of_colors_player)
             self.setting.screen_color = random.choice(self.setting.list_of_colors_player)
 
+    def ball_rebound_sound(self):
+        """plays rebound sound upon collision"""
+        collision_sound = pygame.mixer.Sound('Sound\\collision_sound.wav')
+        collision_sound.set_volume(1.0)
+        collision_sound.play()
+
     def update_and_reset(self):
         """update the score and reset"""
         if self.ball.rect.right > self.screen_rect.right:
-            self.reset_ball()
+            self.randomize_ball_movement()
             self.p1_score_board.update_score()
         if self.ball.rect.left < self.screen_rect.left:
-            self.reset_ball()
+            self.randomize_ball_movement()
             self.p2_score_board.update_score()
 
-    def reset_ball(self):
-        """reset the ball"""
-        self.ball.y = self.screen_rect.centery
-        self.ball.x = self.screen_rect.centerx
+    def randomize_ball_movement(self):
+        """make ball movement random"""
+        # self.ball.y = self.screen_rect.centery
+        self.setting.ball_direction_y *= -1
+        self.setting.ball_direction_x *= -1
+        x = self.screen_width // 2
+        y = self.screen_height // 2
+        rand1 = random.randint(0,x) + (self.screen_width // 2)
+        rand2 = random.randint(0,y) + (self.screen_height // 2)
+        self.ball.x = rand1
+        self.ball.y = rand2
 
     def run(self):
         """Keep the game running"""
