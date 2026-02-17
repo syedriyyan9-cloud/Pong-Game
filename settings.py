@@ -18,7 +18,7 @@ class Settings:
         self.ball_color = (255,0,0)
         self.ball_direction_y = random.choice([1,-1])
         self.ball_direction_x = random.choice([1,-1])
-        self.increase_speed = 0.05
+        self.increase_speed = 0.1
 
         self.color_white = (255,255,255)
         self.color_black = (0,0,0)
