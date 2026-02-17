@@ -1,2 +1,3 @@
-Create a pong game, two player, both on different sides of screen, the ball bounces back after hitting a palyer,
-if the ball goes out of bounds the player loses a point, or the game ends.
+Create a pong game, two player, both on different sides of screen, the ball 
+bounces back after hitting a palyer,
+if the ball goes out of bounds, the other player gains a point.
